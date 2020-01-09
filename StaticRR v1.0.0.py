@@ -137,10 +137,6 @@ class staticRR:
     
     def formParameters1(self, df2, info): 
         #this method splits the REF and SHG Signal
-        
-        # print(data_matrix)
-        # print(data_matrix.iloc[1,0])
-        
         if 'SHG_REF' in df2:
             data_matrix = df2.loc[1:, info:].astype(str).astype(float)
             for column in data_matrix:
@@ -156,14 +152,11 @@ class staticRR:
 #    def formParameters(self, df2, tg1):     
         #this method splits the REF and SHG Signal
         #updated to handle Buffer Gate & Dot Average features
-        #WARNING UNTESTED, NEED NEW DATA AS A TSV FILE TO TEST
         tg = float(tg1)
         tg2 = ((rec_time * samp_rate)/ 100.0) + (tg - 0.01) #amount of gates we need to read 
         tg2 = str(tg2)
         num_avg = spot.values.max() #number of points being averaged
-        
-        
-        
+  
         if 'SHG_REF' in df2:
             data_matrix = df2.loc[1:, tg1:tg2].astype(str).astype(float)
             for column in data_matrix:
