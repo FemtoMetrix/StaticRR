@@ -197,7 +197,7 @@ class StaticRR(FemtoData):
     def rsquare(self, SHG_signal_matrix, Scan_average_SHG_signal):
         #calculates rsquare
         residual_square = np.square((SHG_signal_matrix - Scan_average_SHG_signal)/Scan_average_SHG_signal)
-        square_RR = residual_square.mean()
+        square_RR = residual_square.mean(axis = 1)
         sqrt_RR = np.sqrt(square_RR)
         curve_RR = sqrt_RR.mean()
 
