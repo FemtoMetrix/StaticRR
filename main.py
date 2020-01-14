@@ -68,7 +68,7 @@ def main():
             sheet_2.write(n, 7, femtodata.process_job_recipe_name)
 
             sheet_3.write(0, n, femtodata.date)
-            sheet_3.write(1, n ,femtodata.time)
+            sheet_3.write(1, n ,femtodata.process_job_recipe_name)
             sheet_3.write(2, n, femtodata.slot)
             for i in range(len(femtodata.scan_average_shg_signal)):
                 sheet_3.write(i+3, n, femtodata.scan_average_shg_signal[i])
@@ -110,7 +110,7 @@ def time_indep(sheet):
 
 def site_avg_raw_data(sheet):
     Title = ["Date", "Recipe", "Time/Slot"]
-    time_range = list(np.arange(0.030,5.000, 0.01))
+    time_range = list(np.arange(0.030,5.010, 0.01))
 
     for i in range(len(Title)):
         sheet.write(i, 0, Title[i])
