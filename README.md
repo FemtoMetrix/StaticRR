@@ -1,5 +1,5 @@
 # StaticRR
-Current StaticRR version
+Current StaticRR version 1.0.2
 
 ## Instruction
 
